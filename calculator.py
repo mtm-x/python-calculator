@@ -3,27 +3,259 @@ import customtkinter as tk
 
 app = tk.CTk()
 app.title("Calculator")
-app.geometry("700x700")
+app.geometry("600x500")
 
 def clear():
-    entery.delete(0,END)
+    out.delete('0.0','end')
 
-def  entryy():
-    var1 = entery.get()
-    print("hello",var1)
-    my_label.configure(text=entery.get())
+def calculate():
+    cal= out.get('0.0', 'end')
+    result = eval(cal)
+    out.delete('0.0', 'end')
+    out.insert('0.0', result)
 
-entery=tk.CTkEntry(app,placeholder_text="enter the number:")
-entery.pack(pady="40")
+out=tk.CTkTextbox(app,width=560,height=50,font=(('Arial', 50)),corner_radius=10)
+out.grid(row=0, column=0, columnspan=4, padx=15, pady=15)
 
-my_label=tk.CTkLabel(app,text="")
-my_label.pack(pady="40")
 
-calculatebt=tk.CTkButton(app,width=100,height=20,corner_radius=10,text="Calculate",command=entryy)
-calculatebt.pack(pady="20")
+bt1=tk.CTkButton(app,
+                 text="1",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',1),
+                 corner_radius=10,
+                 fg_color=("blue","lightblue"),
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt1.grid(row=1, column=0, padx=15, pady=2,)
 
-my_clear = tk.CTkButton(app,text="Clear",command=clear)
-my_clear.pack(pady="20")
+bt2=tk.CTkButton(app,
+                 text="2",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',2),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt2.grid(row=1, column=1, padx=5, pady=2,)
+
+bt3=tk.CTkButton(app,
+                 text="3",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',3),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt3.grid(row=1, column=2, padx=15, pady=2,)
+
+bt4=tk.CTkButton(app,
+                 text="+",
+                 width=60,
+                 height=60,
+                 command=lambda:out.insert('end','+'),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+                
+bt4.grid(row=1, column=3, padx=15, pady=2,)
+
+bt5=tk.CTkButton(app,
+                 text="4",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',4),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt5.grid(row=2, column=0, padx=15, pady=10,)
+
+bt6=tk.CTkButton(app,
+                 text="5",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',5),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt6.grid(row=2, column=1, padx=15, pady=2,)
+
+bt7=tk.CTkButton(app,
+                 text="6",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',6),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt7.grid(row=2, column=2, padx=15, pady=2,)
+
+bt8=tk.CTkButton(app,
+                 text="-",
+                 width=60,
+                 height=60,
+                 command=lambda:out.insert('end','-'),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt8.grid(row=2, column=3, padx=15, pady=15,)
+
+
+bt9=tk.CTkButton(app,
+                 text="7",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',7),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt9.grid(row=3, column=0, padx=15, pady=2,)
+
+bt10=tk.CTkButton(app,
+                 text="8",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',8),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt10.grid(row=3, column=1, padx=15, pady=2,)
+
+bt11=tk.CTkButton(app,
+                 text="9",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',9),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt11.grid(row=3, column=2, padx=15, pady=2,)
+
+
+bt12=tk.CTkButton(app,
+                 text="x",
+                 width=60,
+                 height=60,
+                 command=lambda:out.insert('end','*'),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt12.grid(row=3, column=3, padx=15, pady=10,)
+
+
+bt13=tk.CTkButton(app,
+                 text="0",
+                 width=130,
+                 height=60,
+                 command=lambda:out.insert('end',0),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt13.grid(row=4, column=2, padx=15, pady=10,)
+
+bt14=tk.CTkButton(app,
+                 text="÷",
+                 width=60,
+                 height=60,
+                 command=lambda:out.insert('end', '/'),
+                 fg_color=("blue","lightblue"),
+                 corner_radius=10,
+                 border_color="white",
+                 border_width=2,
+                 text_color="black",
+                 font=("",20))
+bt14.grid(row=4, column=3, padx=15, pady=10,)
+
+calculatebt=tk.CTkButton(app,
+                         width=130,
+                         height=60,
+                         corner_radius=10,
+                         text="=",
+                         command=calculate,
+                         font=('',20),
+                         border_color="white",
+                         border_width=2,
+                         text_color="black")
+calculatebt.grid(row=4, column=0, padx=15,pady=10)
+
+my_clear = tk.CTkButton(app,
+                        text="Clear",
+                        command=clear,
+                        width=130,
+                        height=60,
+                        fg_color="red",
+                        corner_radius=10,
+                        font=('',20),
+                        border_color="white",
+                        border_width=2,
+                        text_color="black")
+my_clear.grid(row=4, column=1, padx=10,)
+
+
+mtm=tk.CTkButton(app,text="Written By",
+                 font=("",20),
+                 border_color="white",
+                 width=130,
+                 height=60,
+                 border_width=2,
+                 text_color="black",
+                 fg_color="lightgreen",
+                 command=lambda:out.insert('end',"github.com/mtm-x")
+                 )
+mtm.grid(row=5,columnspan=5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

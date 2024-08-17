@@ -1,18 +1,34 @@
 from customtkinter import *
 import customtkinter as tk
+import webbrowser
 
 app = tk.CTk()
 app.title("Calculator")
-app.geometry("600x500")
+app.geometry("600x560")
+tk.set_appearance_mode("System")
+tk.set_default_color_theme("green")
+
+def website():
+    mtmsite= "https://mtm-x.github.io/"
+    webbrowser.open(mtmsite)
+
+def web():
+    git = "https://github.com/mtm-x"
+    webbrowser.open(git)
+
 
 def clear():
     out.delete('0.0','end')
 
 def calculate():
-    cal= out.get('0.0', 'end')
-    result = eval(cal)
-    out.delete('0.0', 'end')
-    out.insert('0.0', result)
+    try:
+        cal= out.get('0.0', 'end').strip()
+        result = eval(cal)
+        out.delete('0.0', 'end')
+        out.insert('0.0', result)
+    except Exception :
+        out.delete('0.0','end')
+        out.insert('0.0',"Invalid!!")
 
 out=tk.CTkTextbox(app,width=560,height=50,font=(('Arial', 50)),corner_radius=10)
 out.grid(row=0, column=0, columnspan=4, padx=15, pady=15)
@@ -189,7 +205,7 @@ bt13=tk.CTkButton(app,
                  border_width=2,
                  text_color="black",
                  font=("",20))
-bt13.grid(row=4, column=2, padx=15, pady=10,)
+bt13.grid(row=4, column=0, padx=15, pady=10,)
 
 bt14=tk.CTkButton(app,
                  text="÷",
@@ -213,54 +229,49 @@ calculatebt=tk.CTkButton(app,
                          font=('',20),
                          border_color="white",
                          border_width=2,
-                         text_color="black")
-calculatebt.grid(row=4, column=0, padx=15,pady=10)
+                         text_color="black",
+                         fg_color=("blue","lightblue"),)
+calculatebt.grid(row=4, column=2, padx=15,pady=10)
 
 my_clear = tk.CTkButton(app,
                         text="Clear",
                         command=clear,
                         width=130,
                         height=60,
-                        fg_color="red",
+                        fg_color=("blue","lightblue"),
                         corner_radius=10,
                         font=('',20),
                         border_color="white",
                         border_width=2,
-                        text_color="black")
+                        text_color="black",)
 my_clear.grid(row=4, column=1, padx=10,)
 
 
-mtm=tk.CTkButton(app,text="Written By",
+mtm=tk.CTkButton(app,
+                 text="GitHub",
                  font=("",20),
                  border_color="white",
-                 width=130,
-                 height=60,
+                 width=400,
+                 height=40,
                  border_width=2,
                  text_color="black",
                  fg_color="lightgreen",
-                 command=lambda:out.insert('end',"github.com/mtm-x")
+                 command=web,
+                 corner_radius=10
                  )
-mtm.grid(row=5,columnspan=5)
+mtm.grid(row=5,columnspan=5,pady=15)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+myweb=tk.CTkButton(app,
+                   text="My Website",
+                   font=("",20),
+                   border_color="white",
+                   width=400,
+                   height=30,
+                   border_width=2,
+                   text_color="black",
+                   fg_color="lightgreen",
+                   command=website,
+                   corner_radius=10)
+myweb.grid(row=6, columnspan=5 ,pady=5)
 
 app.mainloop()

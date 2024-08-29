@@ -17,11 +17,11 @@ for j in range(4):  # Configure columns 0 to 3
 
 def website():
     mtmsite= "https://mtm-x.github.io/"
-    webbrowser.open(mtmsite)
+    webbrowser.open_new(mtmsite)
 
 def web():
     git = "https://github.com/mtm-x"
-    webbrowser.open(git)
+    webbrowser.open_new(git)
 
 
 def clear():
@@ -278,7 +278,7 @@ mtm=tk.CTkButton(app,
 mtm.grid(row=5,columnspan=5,pady=15,)
 
 myweb=tk.CTkButton(app,
-                   text="My Website",
+                   text="Portfolio",
                    font = FontApp,
                    border_color="white",
                    width=400,

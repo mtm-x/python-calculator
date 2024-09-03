@@ -14,12 +14,12 @@ def command():
     subprocess.check_call(['pyinstaller','--onefile','calculator.py']) 
     print("making executables")
     
-if (sys.platform == "linux" or sys.platform == "windows" ) :
+if (sys.platform == "linux" or sys.platform == "win32" ) :
     try :
         install()
-        print("Installing pyinstaller")
+        print("Installing pyinstaller........!!!!")
         time.sleep(2)
         command()
         
     except:
-        print("Error!!")
+        print("Error!!!!")

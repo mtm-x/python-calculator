@@ -7,4 +7,10 @@ GUI is made with python UI library  [CustomTkinter](https://github.com/TomSchima
      ```
      pip install customtkinter
      ```
-2. Clone this repo or download `calculator.py` and run by `python3 calculator.py` or `python calculator.py`
+2. Make binaries for linux or executables for windows by running 
+
+     ```
+     python3 install.py
+     ```
+
+3. Clone this repo or download `calculator.py` and run by `python3 calculator.py` or `python calculator.py`

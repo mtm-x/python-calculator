@@ -4,7 +4,7 @@ import webbrowser
 
 app = tk.CTk() 
 app.title("Calculator")
-app.geometry("600x560")
+app.geometry("700x560")
 tk.set_appearance_mode("Dark")
 tk.set_default_color_theme("green")
 

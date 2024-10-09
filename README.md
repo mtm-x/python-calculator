@@ -14,5 +14,3 @@ GUI is made with python UI library  [CustomTkinter](https://github.com/TomSchima
      ```
 
 3. Clone this repo or download `calculator.py` and run by `python3 calculator.py` or `python calculator.py`
-
-4. pull request ex
